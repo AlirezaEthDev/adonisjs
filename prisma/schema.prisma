@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id            String     @id @default(auto()) @map("_id") @db.ObjectId
+  orderId       String     @unique
+  address       String
+  from          Token
+  to            Token
+  amount        String
+  price         String
+  deadline      Int?       @default(0)
+  filled        String?    @default("0")
+  filledPercent Float?     @default(0)
+  chainId       Int
+  sig           String
+  cancelled     Boolean?   @default(false)
+  type          OrderType? @default(P2P)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+}
+
+type Token {
+  name     String
+  address  String
+  symbol   String
+  chainId  String
+  decimals String
+}
+
+enum OrderType {
+  P2P
+  LIMIT
+}
