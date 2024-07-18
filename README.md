@@ -1,2 +1,2 @@
-# asonisjs
+# adonisjs
 AdonisJS is a TypeScript-first web framework for Node.js, designed to help developers build robust and efficient web applications and API servers. It is known for its modern and type-safe approach, leveraging ES modules, Node.js sub-path imports, and other modern JavaScript primitives. AdonisJS provides a comprehensive set of features out of the box, including a zero-config IoC container, a supercharged CLI, and a vast collection of officially maintained packages.
